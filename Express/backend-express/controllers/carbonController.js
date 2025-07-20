@@ -4,9 +4,9 @@ const carbonService = require('../services/carbonService');
 // 10 data terakhir berdasarkan waktu simulasi
 exports.getCO2Last10 = async (req, res) => {
   try {
-    // Mengurangi 48 hari untuk mendapatkan tanggal yang tepat
+    // Mengurangi 87 hari untuk mendapatkan tanggal yang tepat
     const now = moment();  // Waktu lokal saat ini
-    const targetDate = now.subtract(48, 'days');  // Mengurangi 48 hari dari tanggal sekarang
+    const targetDate = now.subtract(87, 'days');  // Mengurangi 87 hari dari tanggal sekarang
     const simDateStr = targetDate.format('YYYY-MM-DD HH:mm:ss');  // Menggunakan waktu lokal saat ini setelah pengurangan
 
     const rows = await carbonService.getLast10CO2(simDateStr);  // Panggil service dengan simDateStr
@@ -33,9 +33,9 @@ exports.getCO2Last10 = async (req, res) => {
 // Simulasi data CO2
 exports.getRealtimeSimulatedCO2 = async (req, res) => {
   try {
-    // Mengurangi 48 hari untuk mendapatkan tanggal yang tepat
+    // Mengurangi 87 hari untuk mendapatkan tanggal yang tepat
     const now = moment();  // Waktu lokal saat ini
-    const targetDate = now.subtract(48, 'days');  // Mengurangi 48 hari dari tanggal sekarang
+    const targetDate = now.subtract(87, 'days');  // Mengurangi 87 hari dari tanggal sekarang
     const simDateStr = targetDate.format('YYYY-MM-DD HH:mm:ss');  // Menggunakan waktu lokal saat ini setelah pengurangan
 
     const toleranceSec = 300;  // Toleransi 5 menit
