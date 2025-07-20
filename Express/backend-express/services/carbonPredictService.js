@@ -6,9 +6,9 @@ const moment = require('moment-timezone');
 exports.getLast10CO2 = async (simDateStr = null) => {
   const nowWIB = moment.tz('Asia/Jakarta');  // Waktu sekarang di zona Jakarta (WIB)
 
-  // Menghitung perbedaan hari antara tanggal sekarang dan 48 hari yang lalu
+  // Menghitung perbedaan hari antara tanggal sekarang dan 87 hari yang lalu
   const referenceDate = moment('2025-04-25');  // Tanggal referensi (25 April 2025)
-  const daysDifference = nowWIB.diff(referenceDate, 'days') - 48;  // Mengurangi 48 hari dari perhitungan
+  const daysDifference = nowWIB.diff(referenceDate, 'days') - 87;  // Mengurangi 87 hari dari perhitungan
 
   // Sesuaikan tanggal yang diambil berdasarkan perbedaan hari yang sudah dikurangi
   const simulatedDate = referenceDate.clone().add(daysDifference, 'days');  // Sesuaikan tanggal simulasi
@@ -39,13 +39,13 @@ exports.getLast10CO2 = async (simDateStr = null) => {
   }));
 };
 
-// Fungsi untuk mendapatkan data CO2 berdasarkan waktu simulasi dengan pengurangan 48 hari
+// Fungsi untuk mendapatkan data CO2 berdasarkan waktu simulasi dengan pengurangan 87 hari
 exports.getSimulatedCO2 = async (simDateStr, toleranceSec = 300) => {
   const nowWIB = moment.tz('Asia/Jakarta');  // Waktu sekarang di zona Jakarta (WIB)
 
-  // Menghitung perbedaan hari antara tanggal sekarang dan 48 hari yang lalu
+  // Menghitung perbedaan hari antara tanggal sekarang dan 87 hari yang lalu
   const referenceDate = moment('2025-04-25');  // Tanggal referensi (25 April 2025)
-  const daysDifference = nowWIB.diff(referenceDate, 'days') - 48;  // Mengurangi 48 hari dari perhitungan
+  const daysDifference = nowWIB.diff(referenceDate, 'days') - 87;  // Mengurangi 87 hari dari perhitungan
 
   // Sesuaikan tanggal yang diambil berdasarkan perbedaan hari yang sudah dikurangi
   const simulatedDate = referenceDate.clone().add(daysDifference, 'days');  // Sesuaikan tanggal simulasi
@@ -71,7 +71,7 @@ exports.getSimulatedCO2 = async (simDateStr, toleranceSec = 300) => {
   }));
 };
 
-// Fungsi untuk download data CO2 tanpa pengurangan 48 hari
+// Fungsi untuk download data CO2 tanpa pengurangan 87 hari
 exports.downloadCO2 = async (year, month, day, hour, minute, limit = 1000, simDateStr) => {
   let conditions = [];
   let params = [];
@@ -105,7 +105,7 @@ exports.downloadCO2 = async (year, month, day, hour, minute, limit = 1000, simDa
   return rows;
 };
 
-// Fungsi untuk download data CO2 dalam rentang tanggal tanpa pengurangan 48 hari
+// Fungsi untuk download data CO2 dalam rentang tanggal tanpa pengurangan 87 hari
 exports.downloadCO2ByRange = async (start_date, end_date, simDateStr) => {
   let sql = `
     SELECT
